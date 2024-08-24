@@ -1,0 +1,26 @@
+<div class="marketing-area">
+  <ish-content-include includeId="include.basket.base.top.pagelet2-Include" />
+</div>
+
+<ng-container *ngIf="basket$ | async as basket; else emptyBasket">
+  <ng-container *ngIf="basket.lineItems.length; else emptyBasket">
+    <ish-shopping-basket
+      [basket]="basket"
+      [error]="basketError$ | async"
+      [loading]="basketLoading$ | async"
+      (nextStep)="nextStep()"
+    />
+  </ng-container>
+</ng-container>
+
+<ng-template #emptyBasket>
+  <ish-shopping-basket-empty [error]="basketError$ | async" />
+
+  <ish-loading *ngIf="basketLoading$ | async" />
+</ng-template>
+
+<ish-lazy-recently-viewed />
+
+<div class="marketing-area">
+  <ish-content-include includeId="include.basket.base.bottom.pagelet2-Include" />
+</div>

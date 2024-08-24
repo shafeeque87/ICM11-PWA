@@ -1,0 +1,40 @@
+.content-page {
+  padding: $space-default 0 $space-default 0;
+}
+
+ul {
+  &.collection {
+    padding-left: 0;
+    list-style: none outside none;
+  }
+}
+
+ol {
+  &.collection {
+    padding-left: 24px;
+    list-style: outside none decimal;
+  }
+}
+
+// HELPDESK
+
+/* purgecss start ignore */
+.helpdesk-info-box {
+  width: 100%;
+  padding: $space-default * 0.5;
+  margin-bottom: $space-default;
+  color: $text-color-inverse;
+  background: $color-corporate;
+
+  a {
+    color: $text-color-inverse;
+    text-decoration: underline;
+  }
+
+  h2 {
+    margin-top: 0;
+    color: $text-color-inverse;
+  }
+}
+
+/* purgecss end ignore */

@@ -1,0 +1,107 @@
+//
+// CHECKOUT
+
+/************* Checkout Step 1 - Address ***************/
+
+/************* Checkout Step 2 - Shipping ***************/
+
+.shipping-methods {
+  margin-bottom: $space-default;
+}
+
+.cart-summary-checkout {
+  font-size: $font-size-sm;
+
+  h5 {
+    margin-top: 0;
+  }
+
+  .cart-pli-data {
+    color: $text-color-quaternary;
+
+    span {
+      display: inline-block;
+      width: 80px;
+    }
+  }
+}
+
+/************* Checkout Step 5 - Checkout Receipt ***************/
+
+.infobox-wrapper {
+  display: flex;
+  width: 100%;
+
+  .infobox {
+    width: 100%;
+    padding: $space-default $space-default 0;
+    margin-bottom: $space-default * 2;
+    background-color: $color-tertiary;
+
+    h3 {
+      margin-top: 0;
+    }
+
+    @media (min-width: $screen-sm-min) {
+      .col-md-6 ~ .col-md-6 {
+        padding-left: $space-default * 2;
+      }
+    }
+
+    &.infobox-color-widget {
+      padding-bottom: $space-default;
+      color: $text-color-inverse;
+      background: $CORPORATE-PRIMARY;
+
+      h3 {
+        font-size: $font-size-navbar-item;
+        color: inherit;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: underline;
+        text-transform: none;
+
+        &:hover {
+          color: $text-color-quaternary;
+        }
+      }
+
+      button.btn {
+        color: $text-color-inverse;
+
+        &:hover {
+          color: $text-color-quaternary;
+        }
+      }
+
+      .infobox-count {
+        font-size: $font-size-lg * 2;
+        line-height: 1;
+      }
+
+      .infobox-count-large {
+        font-size: 3.75rem;
+        line-height: 1;
+      }
+
+      .row {
+        text-transform: uppercase;
+      }
+
+      .row:last-of-type {
+        margin-top: 0.5rem;
+      }
+    }
+
+    &.infobox-widget {
+      min-height: 175px;
+      padding-bottom: $space-default;
+
+      .row:last-of-type {
+        margin-top: $space-default;
+      }
+    }
+  }
+}

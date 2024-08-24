@@ -1,0 +1,105 @@
+.product-title {
+  font-family: $font-family-condensedbold;
+  font-size: 16px;
+  color: $text-color-primary;
+}
+
+a.product-title {
+  font-family: $font-family-condensedregular;
+  color: $text-color-corporate;
+}
+
+.product-id {
+  font-size: $font-size-corporate;
+  color: $text-color-quaternary;
+
+  .product-id-label {
+    padding-right: divide($space-default, 3);
+  }
+}
+
+.product-info {
+  font-family: $font-family-condensedregular;
+  color: $text-color-quaternary;
+
+  label {
+    text-transform: uppercase;
+  }
+
+  .product-brand {
+    text-transform: uppercase;
+
+    a {
+      color: $text-color-quaternary;
+
+      &:hover {
+        color: $text-color-tertiary;
+      }
+    }
+  }
+
+  .current-price {
+    font-family: $font-family-condensedregular;
+    font-size: 30px;
+
+    .price-note {
+      margin-left: $space-default;
+      font-size: $font-size-corporate;
+    }
+  }
+
+  .ready-for-shipment,
+  .product-availability {
+    color: $text-color-primary;
+  }
+
+  .ready-for-shipment {
+    padding-bottom: $space-default;
+  }
+
+  .product-quantity,
+  .product-variation {
+    label {
+      padding-bottom: 0;
+      text-align: left;
+      text-transform: uppercase;
+    }
+
+    .form-group {
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+
+  .product-variation {
+    .form-group {
+      margin-bottom: divide($space-default, 3);
+
+      label {
+        padding-top: 0;
+      }
+    }
+  }
+
+  .product-variation-container {
+    margin-bottom: $space-default * 2;
+  }
+
+  .add-to-cart {
+    margin-top: $space-default;
+    margin-bottom: $space-default;
+  }
+
+  .add-to-wishlist {
+    padding-left: 0;
+  }
+
+  .btn.btn-block {
+    margin-bottom: $space-default * 0.5;
+  }
+
+  .promotion-list {
+    border-spacing: 0 $space-default;
+    border-collapse: separate;
+  }
+}

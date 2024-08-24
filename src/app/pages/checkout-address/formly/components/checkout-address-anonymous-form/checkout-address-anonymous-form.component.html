@@ -1,0 +1,28 @@
+<h3 class="subheading">{{ 'checkout.addresses.billing_address.heading' | translate }}</h3>
+<p class="indicates-required"><span class="required">*</span>{{ 'account.required_field.message' | translate }}</p>
+
+<!-- Invoice Address -->
+<ish-formly-address-form
+  #invoiceAddress
+  data-testing-id="invoiceAddressForm"
+  [parentForm]="invoiceAddressForm"
+  [businessCustomer]="isBusinessCustomer"
+/>
+
+<!-- Taxation ID and Email address input field-->
+<ish-formly-address-extension-form [form]="attributesForm" [businessCustomer]="isBusinessCustomer" />
+
+<!-- Shipping Address Selection Radio boxes-->
+<div class="section">
+  <h3>{{ 'checkout.addresses.shipping_address.heading' | translate }}</h3>
+  <formly-form [form]="shipOptionForm" [fields]="shipOptionFields" />
+</div>
+
+<!-- Shipping Address -->
+<div [ngbCollapse]="!isShippingAddressFormExpanded" data-testing-id="shipping-address-form">
+  <ish-formly-address-form
+    #shippingAddress
+    [parentForm]="shippingAddressForm"
+    [businessCustomer]="isBusinessCustomer"
+  />
+</div>

@@ -1,0 +1,22 @@
+<ng-container *ngIf="pagelet?.hasParam('Link'); else image">
+  <ng-container *ngIf="isRouterLink(pagelet, 'Link'); else externalLink">
+    <a [routerLink]="routerLink(pagelet, 'Link')" [attr.title]="pagelet.stringParam('LinkTitle')" class="teaser-link">
+      <ng-container *ngTemplateOutlet="image" />
+    </a>
+  </ng-container>
+  <ng-template #externalLink>
+    <a [href]="pagelet.stringParam('Link')" [attr.title]="pagelet.stringParam('LinkTitle')" class="teaser-link">
+      <ng-container *ngTemplateOutlet="image" />
+    </a>
+  </ng-template>
+</ng-container>
+
+<ng-template #image>
+  <div [ngClass]="pagelet.stringParam('CSSClass')">
+    <img
+      loading="lazy"
+      [src]="pagelet.stringParam('Image')"
+      [attr.alt]="pagelet.stringParam('AlternateText') || ('image.alt_text.default' | translate)"
+    />
+  </div>
+</ng-template>

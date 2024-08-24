@@ -1,0 +1,9 @@
+<ng-container *ngIf="currentUser$">
+  <ish-account-profile-user
+    [currentUser$]="currentUser$"
+    [error]="userError$ | async"
+    (updateUserProfile)="updateUserProfile($event)"
+  />
+
+  <ish-loading *ngIf="userLoading$ | async" />
+</ng-container>

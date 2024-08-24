@@ -1,0 +1,39 @@
+//
+// PRODUCT IMAGES
+
+.product-detail-img {
+  .carousel {
+    float: left;
+    width: 100%;
+    max-width: 500px;
+
+    @media (max-width: $screen-xs-max) {
+      width: 100%;
+    }
+  }
+}
+
+.product-image-zoom {
+  cursor: zoom-in;
+}
+
+.product-thumb-set {
+  float: left;
+  padding: divide($space-default, 3);
+  margin-bottom: $space-default;
+  cursor: pointer;
+  border: 1px solid $border-color-lighter;
+  opacity: 0.3;
+
+  img {
+    width: 100%;
+  }
+
+  &.active {
+    opacity: 1;
+  }
+}
+
+.product-img-thumbs {
+  width: 90px;
+}

@@ -1,0 +1,50 @@
+/**************** SEARCH RESULT ******************/
+
+.search-term {
+  font-family: $font-family-bold;
+}
+
+.product-search-result {
+  padding: $space-default 0 $space-default 0;
+}
+
+.no-search-result {
+  padding: $space-default 0 $space-default 0;
+  clear: both;
+}
+
+.no-search-result-title {
+  span {
+    font-family: $font-family-bold;
+  }
+}
+
+.search-guidelines {
+  clear: both;
+}
+
+.main-search-container {
+  position: relative;
+  display: inline-block;
+  padding: 0 0 ($space-default * 2) 0;
+
+  input {
+    float: left;
+    width: 320px;
+    height: $search-container-height;
+    padding-left: 14px;
+    line-height: $search-container-height;
+    border: $border-width-default solid $border-color-light;
+  }
+
+  button {
+    &.btn-search {
+      position: absolute;
+      right: 0;
+      font-size: $font-size-lg;
+      color: $text-color-primary;
+      background: 0;
+      border: 0;
+    }
+  }
+}

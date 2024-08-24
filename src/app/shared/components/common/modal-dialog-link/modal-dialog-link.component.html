@@ -1,0 +1,19 @@
+<button
+  type="button"
+  class="btn btn-link btn-link-action"
+  (click)="modalDialog.show()"
+  rel="nofollow"
+  aria-haspopup="dialog"
+>
+  {{ linkText | translate }}
+</button>
+<ish-modal-dialog #modalDialog [options]="options" (shown)="shown()" (closed)="closed()">
+  <ng-container *ngIf="lazyContent; else contentProjection">
+    <div *ngIf="shown$ | async">
+      <ng-container *ngTemplateOutlet="lazyContent.templateRef" />
+    </div>
+  </ng-container>
+  <ng-template #contentProjection>
+    <ng-content></ng-content>
+  </ng-template>
+</ish-modal-dialog>

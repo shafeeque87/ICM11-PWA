@@ -1,0 +1,29 @@
+<ng-container *ngIf="product$ | async as product">
+  <div *ngIf="!product.failed" class="product-tile" [attr.data-testing-sku]="product.sku">
+    <div class="product-image-container">
+      <ish-product-image imageType="M" [link]="true" />
+      <ish-product-label />
+    </div>
+
+    <ish-product-name />
+
+    <ish-lazy-product-rating [hideNumberOfReviews]="true" />
+
+    <ish-product-promotion displayType="simple" />
+
+    <div *ngIf="configuration$('price') | async" class="price-container">
+      <ish-product-price [showInformationalPrice]="true" />
+    </div>
+
+    <ish-product-item-variations />
+
+    <div class="product-tile-actions btn-group">
+      <ish-lazy-tacton-configure-product displayType="icon" />
+      <ish-lazy-product-add-to-quote displayType="icon" cssClass="btn-link" />
+      <ish-lazy-product-add-to-compare displayType="icon" cssClass="btn-link" />
+      <ish-lazy-product-add-to-order-template [cssClass]="'btn btn-link mr-0'" displayType="icon" />
+      <ish-lazy-product-add-to-wishlist cssClass="btn-link" displayType="icon" />
+      <ish-product-add-to-basket displayType="icon" cssClass="btn-link" />
+    </div>
+  </div>
+</ng-container>

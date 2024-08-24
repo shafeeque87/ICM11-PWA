@@ -1,0 +1,60 @@
+<ish-product-detail-actions />
+
+<div *ngIf="product$ | async as product" class="row product-details">
+  <div class="col-12 col-md-6 col-lg-8"><ish-product-images /></div>
+
+  <div class="col-12 col-md-6 col-lg-4">
+    <ish-lazy-product-rating />
+    <h1>
+      <span itemprop="name"><ish-product-name [link]="false" /></span>
+    </h1>
+
+    <div class="product-info">
+      <ish-product-brand />
+
+      <ish-stock/>
+      
+      <ish-product-id />
+
+      <ish-product-promotion />
+
+      <ish-product-short-description/>
+
+      <div class="price-container" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+        <ish-product-price [showInformationalPrice]="true" [showPriceSavings]="true" />
+      </div>
+
+      <ish-product-inventory />
+
+      <ish-product-shipment />
+
+      <ish-product-detail-variations />
+
+      <ish-lazy-tacton-configure-product />
+
+      <div class="row form-group">
+        <div class="col-6">
+          <ish-product-quantity-label for="product-detail-quantity" />
+        </div>
+        <div class="col-6">
+          <ish-product-quantity elementId="product-detail-quantity" />
+        </div>
+      </div>
+
+      <ish-product-add-to-basket [cssClass]="'btn-lg btn-block'" />
+
+      <ish-lazy-product-add-to-order-template [cssClass]="'btn btn-secondary btn-block'" />
+
+      <ish-lazy-product-add-to-quote [cssClass]="'btn-secondary btn-block'" />
+
+      <ish-lazy-product-notification-edit cssClass="btn btn-secondary btn-block" displayType="button" />
+    </div>
+
+    <div class="marketing-area">
+      <ish-content-viewcontext
+        viewContextId="viewcontext.include.product.productinfo"
+        [callParameters]="{ Product: product.sku }"
+      />
+    </div>
+  </div>
+</div>

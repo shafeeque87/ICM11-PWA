@@ -1,0 +1,130 @@
+//
+// FOOTER
+
+/* purgecss start ignore */
+
+footer {
+  clear: both;
+  color: $text-color-secondary;
+
+  // h4 is obsolete, should use .link-group-heading instead
+  h4,
+  .link-group-heading {
+    font-family: $font-family-regular;
+    font-size: 18px;
+    color: $text-color-inverse;
+    text-transform: uppercase;
+  }
+
+  .footer-top {
+    padding: 20px 0;
+    background: $color-primary;
+  }
+
+  .storefinder {
+    @media (max-width: $screen-sm-max) {
+      float: none;
+      width: 100%;
+    }
+
+    .ng-fa-icon {
+      display: block;
+      float: left;
+      padding: 20px $space-default 20px 0;
+      font-size: 40px;
+      color: $text-color-inverse;
+    }
+
+    .link-group-heading {
+      margin: 25px 0 0;
+      line-height: 20px;
+    }
+
+    a {
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+  }
+
+  .footer {
+    padding: ($space-default * 2) 0 ($space-default);
+    margin-top: 0;
+    background: $color-dark;
+
+    @media (max-width: $screen-xs-max) {
+      padding: ($space-default * 2) 0 ($space-default);
+    }
+
+    // h4 is obsolete, should use .link-group-heading instead
+    h4,
+    .link-group-heading {
+      font-family: $font-family-condensedbold;
+    }
+
+    li {
+      a,
+      a:not([href]):not([tabindex]) {
+        font-family: $font-family-condensedregular;
+        color: $text-color-quaternary;
+        text-decoration: none;
+      }
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+  }
+}
+
+.disclaimer {
+  padding: 0 ($space-default);
+}
+
+.copyright {
+  width: 100%;
+  padding: ($space-default * 3) ($space-default) 0;
+  font-size: 12px;
+}
+
+@media (max-width: $screen-xs-max) {
+  .link-group {
+    margin-right: -($space-default);
+    margin-left: -($space-default);
+    border-bottom: $border-width-default solid $border-color-default;
+
+    ul {
+      padding: $space-default ($space-default * 1.5) ($space-default * 2);
+      margin: 0;
+      list-style: none;
+    }
+  }
+
+  .link-group-icon {
+    float: right;
+    color: $text-color-corporate;
+    cursor: pointer;
+  }
+}
+
+.contact {
+  @media (max-width: $screen-sm-max) {
+    float: none;
+    width: 100%;
+  }
+
+  .ng-fa-icon {
+    display: block;
+    float: left;
+    padding: 25px $space-default 0 0;
+    font-size: 30px;
+    color: $text-color-inverse;
+  }
+
+  span {
+    color: $text-color-inverse;
+  }
+}
+
+/* purgecss end ignore */

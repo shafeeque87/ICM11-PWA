@@ -1,0 +1,4 @@
+<h4>Short Description:</h4>
+<div *ngIf="visible$ | async" class="product-short-description">
+  <pre>{{ (shortDescription$ | async) | slice:0:maxLength }}</pre>
+</div>

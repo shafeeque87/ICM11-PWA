@@ -1,0 +1,165 @@
+//
+// BUTTONS
+
+.btn {
+  font-family: $font-family-bold;
+  text-transform: uppercase;
+
+  &:not(.btn-link) {
+    @media (max-width: $screen-xs-max) {
+      display: block;
+      width: 100%;
+      margin-bottom: $space-default;
+      clear: both;
+    }
+  }
+
+  &:focus,
+  &.focus {
+    box-shadow: 0 0 0 $btn-focus-width $CORPORATE-SHADOW;
+  }
+
+  &-primary {
+    background-color: $CORPORATE-PRIMARY;
+    border-color: $CORPORATE-PRIMARY;
+
+    &:hover {
+      background-color: $CORPORATE-SECONDARY;
+      border-color: $CORPORATE-SECONDARY;
+    }
+
+    &:focus,
+    &.focus {
+      background-color: $CORPORATE-SECONDARY;
+      border-color: $CORPORATE-SECONDARY;
+      box-shadow: 0 0 0 $btn-focus-width $CORPORATE-SHADOW;
+    }
+
+    &.disabled,
+    &:disabled {
+      background-color: $CORPORATE-LIGHT;
+      border-color: $CORPORATE-LIGHT;
+    }
+
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active {
+      background-color: $CORPORATE-SECONDARY;
+      border-color: $CORPORATE-SECONDARY;
+
+      &:focus {
+        box-shadow: 0 0 0 $btn-focus-width $CORPORATE-SHADOW;
+      }
+    }
+  }
+
+  &-secondary {
+    &:focus,
+    &.focus {
+      box-shadow: 0 0 0 $btn-focus-width $CORPORATE-SHADOW;
+    }
+
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active {
+      background-color: $CORPORATE-SECONDARY;
+      border-color: $CORPORATE-SECONDARY;
+
+      &:focus {
+        box-shadow: 0 0 0 $btn-focus-width $CORPORATE-SHADOW;
+      }
+    }
+  }
+
+  & ~ .btn.btn-block {
+    margin-left: 0;
+  }
+
+  &.btn-link {
+    font-family: $font-family-regular;
+    text-decoration: none;
+    text-transform: unset;
+    border: none;
+  }
+
+  &.btn-link-inline {
+    display: inline;
+    padding: 0;
+    line-height: inherit;
+    vertical-align: baseline;
+  }
+
+  &.btn-secondary {
+    color: $button-default-color;
+    background-color: $button-default-bg;
+    border-color: $button-default-border;
+
+    &:not(:disabled):hover {
+      background-color: $color-tertiary;
+      border-color: $CORPORATE-SECONDARY;
+    }
+  }
+}
+
+.btn-lg {
+  font-family: $font-family-condensedbold;
+
+  &.btn-block {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+button.btn-link {
+  font-family: $font-family-regular;
+  text-decoration: none;
+  text-transform: unset;
+
+  &.btn-tool {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+  }
+
+  &.btn-link-action {
+    padding: 0;
+    margin-bottom: 1px; // fix inline display
+    font-size: unset;
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+
+    &:not(:focus-visible) {
+      // remove shadow for non-keyboard :focus (shadow is kept if user uses the keyboard)
+      box-shadow: none;
+    }
+  }
+}
+
+// multiple buttons margin handling (use "button-group" in case the buttons are not direct siblings)
+.button-group .btn,
+.btn:not(:only-child):not(.btn-link) {
+  margin-bottom: divide($space-default, 3);
+
+  &:not(.float-right) {
+    margin-right: divide($space-default, 3);
+
+    @media (max-width: $screen-xs-max) {
+      margin-right: 0;
+    }
+  }
+
+  &.float-right {
+    margin-left: divide($space-default, 3);
+
+    @media (max-width: $screen-xs-max) {
+      margin-left: 0;
+    }
+  }
+}
+
+.justify-content-end {
+  .btn.btn-secondary {
+    margin-right: 0;
+  }
+}

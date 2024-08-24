@@ -1,0 +1,10 @@
+<div style="color: black;" *ngIf="(visible$ | async)">
+<p style="font-weight: bold;">Total Stock: {{ total}}</p>
+<table>
+  <tr *ngFor="let stock of stockInformation" >
+    <td>{{ stock.warehouseName }}</td>
+    <td>&nbsp;:&nbsp;{{ stock.count }}</td>
+  </tr>
+</table>
+</div>
+&nbsp;&nbsp;&nbsp;
